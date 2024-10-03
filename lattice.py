@@ -2,69 +2,6 @@ from typing import List, Dict, Set
 import networkx as nx
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_agraph import graphviz_layout
-
-large_relation = {
-    "apple": {"red", "sweet", "round", "fruit", "tree-grown"},
-    "banana": {"yellow", "sweet", "curved", "fruit", "tropical"},
-    "carrot": {"orange", "crunchy", "root", "vegetable", "underground"},
-    "grape": {"purple", "sweet", "small", "fruit", "vine-grown"},
-    "strawberry": {"red", "sweet", "small", "fruit", "soft"},
-    "potato": {"brown", "starchy", "root", "vegetable", "underground"},
-    "broccoli": {"green", "crunchy", "vegetable", "florets", "tree-like"},
-    "watermelon": {"green", "sweet", "large", "fruit", "water-rich"},
-    "lemon": {"yellow", "sour", "round", "citrus", "fruit"},
-    "cherry": {"red", "sweet", "small", "fruit", "stone-fruit"},
-    "tomato": {"red", "juicy", "round", "fruit", "vine-grown"},
-    "onion": {"white", "pungent", "round", "vegetable", "layers"},
-    "cucumber": {"green", "crunchy", "long", "vegetable", "water-rich"},
-    "blueberry": {"blue", "sweet", "small", "fruit", "berry"},
-    "mango": {"orange", "sweet", "tropical", "fruit", "stone-fruit"},
-    "spinach": {"green", "leafy", "vegetable", "soft", "iron-rich"},
-    "pineapple": {"brown", "tropical", "fruit", "spiky", "sweet"},
-    "peach": {"orange", "sweet", "stone-fruit", "fuzzy", "juicy"},
-    "garlic": {"white", "pungent", "clove", "vegetable", "underground"},
-    "pear": {"green", "sweet", "fruit", "tree-grown", "juicy"},
-    "pumpkin": {"orange", "round", "vegetable", "large", "squash"},
-    "zucchini": {"green", "long", "vegetable", "soft", "summer-squash"},
-    "avocado": {"green", "creamy", "fruit", "stone-fruit", "fat-rich"},
-    "grapefruit": {"pink", "bitter", "citrus", "fruit", "large"},
-    "kiwi": {"brown", "fuzzy", "small", "fruit", "tart"},
-    "beetroot": {"purple", "earthy", "root", "vegetable", "underground"},
-    "eggplant": {"purple", "soft", "vegetable", "long", "spongy"},
-    "pepper": {"green", "spicy", "vegetable", "capsicum", "crunchy"},
-    "plum": {"purple", "sweet", "fruit", "stone-fruit", "juicy"},
-    "coconut": {"brown", "hard", "fruit", "tropical", "water-filled"},
-    "lettuce": {"green", "leafy", "vegetable", "crunchy", "water-rich"},
-    "raspberry": {"red", "tart", "small", "fruit", "berry"},
-    "lime": {"green", "sour", "citrus", "small", "fruit"},
-    "celery": {"green", "crunchy", "vegetable", "stalk", "water-rich"},
-    "pomegranate": {"red", "sweet", "fruit", "seeds", "tart"},
-    "papaya": {"orange", "tropical", "fruit", "sweet", "soft"},
-    "cabbage": {"green", "leafy", "vegetable", "crunchy", "layers"},
-    "blackberry": {"black", "sweet", "small", "fruit", "berry"},
-    "radish": {"red", "spicy", "root", "vegetable", "crunchy"},
-    "sweet potato": {"orange", "sweet", "root", "vegetable", "underground"},
-    "corn": {"yellow", "sweet", "vegetable", "kernel", "starchy"},
-    "peas": {"green", "small", "vegetable", "legume", "round"},
-    "asparagus": {"green", "long", "vegetable", "spring", "tender"},
-    "cantaloupe": {"orange", "sweet", "fruit", "melon", "water-rich"},
-    "fig": {"purple", "sweet", "fruit", "soft", "tree-grown"},
-    "dates": {"brown", "sweet", "fruit", "dry", "sticky"},
-    "brussels sprouts": {"green", "small", "vegetable", "leafy", "crunchy"},
-}
-
-small_relation = {
-    "apple": {"red", "sweet"},
-    "banana": {"yellow", "curved"},
-    "carrot": {"orange", "crunchy"},
-    "grape": {"purple", "small"},
-    "lemon": {"yellow", "sour"},
-    "orange": {"orange", "citrus"},
-    "potato": {"brown", "starchy"},
-}
-
-
-
 class ConceptLattice():
     def __init__(self, relation: Dict[str, Set[str]]):
         self.relation = relation
@@ -205,6 +142,67 @@ class ConceptLattice():
     
     
 if __name__ == "__main__":
+    
+    large_relation = {
+        "apple": {"red", "sweet", "round", "fruit", "tree-grown"},
+        "banana": {"yellow", "sweet", "curved", "fruit", "tropical"},
+        "carrot": {"orange", "crunchy", "root", "vegetable", "underground"},
+        "grape": {"purple", "sweet", "small", "fruit", "vine-grown"},
+        "strawberry": {"red", "sweet", "small", "fruit", "soft"},
+        "potato": {"brown", "starchy", "root", "vegetable", "underground"},
+        "broccoli": {"green", "crunchy", "vegetable", "florets", "tree-like"},
+        "watermelon": {"green", "sweet", "large", "fruit", "water-rich"},
+        "lemon": {"yellow", "sour", "round", "citrus", "fruit"},
+        "cherry": {"red", "sweet", "small", "fruit", "stone-fruit"},
+        "tomato": {"red", "juicy", "round", "fruit", "vine-grown"},
+        "onion": {"white", "pungent", "round", "vegetable", "layers"},
+        "cucumber": {"green", "crunchy", "long", "vegetable", "water-rich"},
+        "blueberry": {"blue", "sweet", "small", "fruit", "berry"},
+        "mango": {"orange", "sweet", "tropical", "fruit", "stone-fruit"},
+        "spinach": {"green", "leafy", "vegetable", "soft", "iron-rich"},
+        "pineapple": {"brown", "tropical", "fruit", "spiky", "sweet"},
+        "peach": {"orange", "sweet", "stone-fruit", "fuzzy", "juicy"},
+        "garlic": {"white", "pungent", "clove", "vegetable", "underground"},
+        "pear": {"green", "sweet", "fruit", "tree-grown", "juicy"},
+        "pumpkin": {"orange", "round", "vegetable", "large", "squash"},
+        "zucchini": {"green", "long", "vegetable", "soft", "summer-squash"},
+        "avocado": {"green", "creamy", "fruit", "stone-fruit", "fat-rich"},
+        "grapefruit": {"pink", "bitter", "citrus", "fruit", "large"},
+        "kiwi": {"brown", "fuzzy", "small", "fruit", "tart"},
+        "beetroot": {"purple", "earthy", "root", "vegetable", "underground"},
+        "eggplant": {"purple", "soft", "vegetable", "long", "spongy"},
+        "pepper": {"green", "spicy", "vegetable", "capsicum", "crunchy"},
+        "plum": {"purple", "sweet", "fruit", "stone-fruit", "juicy"},
+        "coconut": {"brown", "hard", "fruit", "tropical", "water-filled"},
+        "lettuce": {"green", "leafy", "vegetable", "crunchy", "water-rich"},
+        "raspberry": {"red", "tart", "small", "fruit", "berry"},
+        "lime": {"green", "sour", "citrus", "small", "fruit"},
+        "celery": {"green", "crunchy", "vegetable", "stalk", "water-rich"},
+        "pomegranate": {"red", "sweet", "fruit", "seeds", "tart"},
+        "papaya": {"orange", "tropical", "fruit", "sweet", "soft"},
+        "cabbage": {"green", "leafy", "vegetable", "crunchy", "layers"},
+        "blackberry": {"black", "sweet", "small", "fruit", "berry"},
+        "radish": {"red", "spicy", "root", "vegetable", "crunchy"},
+        "sweet potato": {"orange", "sweet", "root", "vegetable", "underground"},
+        "corn": {"yellow", "sweet", "vegetable", "kernel", "starchy"},
+        "peas": {"green", "small", "vegetable", "legume", "round"},
+        "asparagus": {"green", "long", "vegetable", "spring", "tender"},
+        "cantaloupe": {"orange", "sweet", "fruit", "melon", "water-rich"},
+        "fig": {"purple", "sweet", "fruit", "soft", "tree-grown"},
+        "dates": {"brown", "sweet", "fruit", "dry", "sticky"},
+        "brussels sprouts": {"green", "small", "vegetable", "leafy", "crunchy"},
+    }
+
+    small_relation = {
+        "apple": {"red", "sweet"},
+        "banana": {"yellow", "curved"},
+        "carrot": {"orange", "crunchy"},
+        "grape": {"purple", "small"},
+        "lemon": {"yellow", "sour"},
+        "orange": {"orange", "citrus"},
+        "potato": {"brown", "starchy"},
+    }
+    
     machine = ConceptLattice(small_relation)
     machine.child_subchild_graph()
     
